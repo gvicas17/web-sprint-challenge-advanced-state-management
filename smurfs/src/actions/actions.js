@@ -26,19 +26,17 @@ export const fetchSmurfs = () => {
 }
 }
 
-// export const postSmurfs = (newSmurf) => {
-//     return(dispatch) => {
-//         dispatch({type: POST_SMURFS})
-
-//         axios.post('http://localhost:3333/smurfs', newSmurf)
-//         .then(res => {
-//             dispatch({type: POST_SMURFS_SUCCESS, payload: res.data})
-//         })
-//         .catch(err => {
-//             dispatch({type: POST_SMURFS_FAILURE, payload: err.message})
-//         })
-//     }
-// }
+export const postSmurfs = (newSmurf) => {
+    return(dispatch) => {
+        axios.post('http://localhost:3333/smurfs', newSmurf)
+        .then(res => {
+            dispatch({type: POST_SMURFS_SUCCESS, payload: res.data})
+        })
+        .catch(err => {
+            dispatch({type: POST_SMURFS_FAILURE, payload: err.message})
+        })
+    }
+}
 
 
 
