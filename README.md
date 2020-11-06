@@ -24,10 +24,27 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What problem does the context API help solve?
+
+Allows us not to have to pass a prop through every level of the tree. Avoids prop drilling.
+
 2. In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+Actions: info that contain info with an action type and data
+Reducers: Provides the functions that create new state based on an action
+Store: Holds the global state.
+
 3. What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+Application state is gloabal state that all components can use. This is good for times where you need to easily update component data. Component state is state directly passed to specific component trees and are good if you want to avoid prop drilling and having to pass props down the whole tree. (If you don't think you will be updating the data often)
+
+
 4. Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+It allows us to make redux asycronous. Therefore we can load other things onto the page without having to wait for data that might take a bit longer to load. The action creator returns an action that flows through the middleware before dispatched to reducers instead of directly to reducers. 
+
 5. What is your favorite state management system you've learned and this sprint? Please explain why!
+
+I like redux with connect function. It may involve prop drilling at times, but so much easier to keep up with state and change it. 
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
@@ -51,8 +68,8 @@ You are expected to be able to answer questions in these areas. Your responses c
 
 Your finished project must include all of the following requirements:
 
-- [ ] Plan and implement how you are going to manage your state for your application
-- [ ] You _must_ use Redux as your state management system
+- [x] Plan and implement how you are going to manage your state for your application
+- [x] You _must_ use Redux as your state management system
 - [ ] Once you have planned out your state management system, fetch data from the smurf server and display the data it returns
 - [ ] Add a form to collect info for a new smurf, and make a POST request to the server to add a new smurf to your village
 
