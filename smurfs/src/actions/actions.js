@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { bindActionCreators } from 'redux'
+
 
 
 
@@ -26,19 +26,19 @@ export const fetchSmurfs = () => {
 }
 }
 
-export const postSmurfs = () => {
-    return(dispatch) => {
-        dispatch({type: POST_SMURFS})
+// export const postSmurfs = (newSmurf) => {
+//     return(dispatch) => {
+//         dispatch({type: POST_SMURFS})
 
-        axios.post('http://localhost:3333/smurfs')
-        .then(res => {
-            dispatch({type: POST_SMURFS_SUCCESS, payload: res.data})
-        })
-        .catch(err => {
-            dispatch({type: POST_SMURFS_FAILURE, payload: err.message})
-        })
-    }
-}
+//         axios.post('http://localhost:3333/smurfs', newSmurf)
+//         .then(res => {
+//             dispatch({type: POST_SMURFS_SUCCESS, payload: res.data})
+//         })
+//         .catch(err => {
+//             dispatch({type: POST_SMURFS_FAILURE, payload: err.message})
+//         })
+//     }
+// }
 
 
 

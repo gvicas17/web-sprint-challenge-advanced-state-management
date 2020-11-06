@@ -6,10 +6,10 @@ import {connect} from 'react-redux'
 function SmurfVillage (props){
     useEffect(() => {
         props.fetchSmurfs()
-    },[])
-
+    }, [])
     return(
         <div>
+            {props.isLoading ? <p>Loading Smurfs...</p> : null}
         {props.error ? <p>{props.error}</p> : null}
         <h2>Smurfs</h2>
         {props.smurfs.map(smurf => {
@@ -27,7 +27,9 @@ function SmurfVillage (props){
 
 const mapStateToProps = (state) => {
 return {
-    smurfs: state.smurfs
+    isLoading: state.isLoading,
+    smurfs: state.smurfs,
+    error: state.error
 }}
 
-export default connect(mapStateToProps,{fetchSmurfs}) (SmurfVillage)
+export default connect(mapStateToProps,{fetchSmurfs})(SmurfVillage)
